@@ -125,33 +125,5 @@ Part <|. Switch
 
 ## Phase3：在HardDisk上增加Switch
 
-实现代码参考visitor.scala
+实现代码参考p3, 用于关闭开关的visitor无需修改
 
-
-## live demo参考
-
-```scala
-import visitor._
-
-//Phase1
-{
-  import phase1._
-  computer.monitor.sw.close()
-  computer.chassis.sw.close()
-}
-
-//Phase2
-{
-  import visitor.phase2._
-  computer.accept(new PartVisitor() {
-    override def visit(part: Switch): Unit = part.close()
-  })
-}  
-
-//Phase3
-{
-  import visitor.phase3._
-  computer.accept(new PartVisitor() {
-    override def visit(part: Switch): Unit = part.close()
-  })
-}  ```
