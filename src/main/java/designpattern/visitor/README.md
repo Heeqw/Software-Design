@@ -131,8 +131,8 @@ Part <|. Switch
 
 ```mermaid
 graph TD; //流程图，由上往下
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+A-->B;
+A-->C;
+B-->D;
+C-->D;
 ```
