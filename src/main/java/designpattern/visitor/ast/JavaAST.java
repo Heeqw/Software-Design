@@ -1,6 +1,5 @@
 package designpattern.visitor.ast;
 
-
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
@@ -29,6 +28,7 @@ public class JavaAST {
                         "}";
         CompilationUnit parsed = StaticJavaParser.parse(simpleClassSrc);
         
+        // 使用传统的方法在语法树上搜索
         for(TypeDeclaration<?> t: parsed.getTypes()){
             for( Object m :t.getMembers()){
                 if(m instanceof MethodDeclaration){
@@ -37,6 +37,7 @@ public class JavaAST {
             }
         }
         
+        // 使用visitor
         parsed.accept(new VoidVisitorAdapter<Void>() {
             @Override
             public void visit(MethodDeclaration n, Void arg) {
@@ -44,6 +45,7 @@ public class JavaAST {
             }
         }, null);
 
+        // 使用visitor
         parsed.accept(new VoidVisitorAdapter<Void>() {
 
             @Override

@@ -3,14 +3,15 @@ package designpattern.visitor.device.livedemo;
 public class Device {
     public static void main(String[] args) {
         Computer computer = new Computer(
-                new Chassis(new Harddisk(), new Switch("chassis")),
+                new Chassis(new Harddisk(
+                    new Switch("harddisk")
+                ), new Switch("chassis")),
                 new Monitor(new Switch("monitor")));
 
-        computer.getChassis().getSwitch1().close();
-        computer.getMonitor().getSwitch1().close();
+        // computer.getChassis().getSwitch1().close();
+        // computer.getMonitor().getSwitch1().close();
 
-        computer.accept(new DeviceVisitorAdaptor() {
-
+        computer.accept(new DeviceVisitorAdapter() {
             public void visit(Switch sw) {
                 sw.close();
             }
@@ -20,38 +21,47 @@ public class Device {
     }
 }
 
-interface DeviceVisitor {
-    void visit(Computer computer);
+interface DevicePart {
+    void accept(DeviceVisitor visitor);
+}
 
+interface DeviceVisitor {
     void visit(Chassis chassis);
 
-    void visit(Monitor monitor);
+    void visit(Computer computer);
 
     void visit(Harddisk harddisk);
 
-    void visit(Switch sw);
+    void visit(Monitor monitor);
+
+    void visit(Switch aSwitch);
 }
 
-class DeviceVisitorAdaptor implements DeviceVisitor {
+/**
+ * DeviceVisitorAdaptor
+ */
+class DeviceVisitorAdapter implements DeviceVisitor {
 
-    public void visit(Computer computer) {
-    }
-
+    @Override
     public void visit(Chassis chassis) {
     }
 
-    public void visit(Monitor monitor) {
+    @Override
+    public void visit(Computer computer) {
     }
 
+    @Override
     public void visit(Harddisk harddisk) {
     }
 
-    public void visit(Switch sw) {
+    @Override
+    public void visit(Monitor monitor) {
     }
-}
 
-interface DevicePart {
-    void accept(DeviceVisitor visitor);
+    @Override
+    public void visit(Switch aSwitch) {
+    }
+
 }
 
 class Computer implements DevicePart {
@@ -99,7 +109,7 @@ class Chassis implements DevicePart {
 
     public void accept(DeviceVisitor visitor) {
         harddisk.accept(visitor);
-        switch1.close();
+        switch1.accept(visitor);
         visitor.visit(this);
     }
 
@@ -107,9 +117,17 @@ class Chassis implements DevicePart {
 
 class Harddisk implements DevicePart {
 
+    private Switch sw;
+
+    public Harddisk(Switch sw) {
+        this.sw = sw;
+    }
+
     public void accept(DeviceVisitor visitor) {
+        sw.accept(visitor);
         visitor.visit(this);
     }
+
 }
 
 class Monitor implements DevicePart {
@@ -125,7 +143,7 @@ class Monitor implements DevicePart {
     }
 
     public void accept(DeviceVisitor visitor) {
-        switch1.close();
+        switch1.accept(visitor);
         visitor.visit(this);
     }
 

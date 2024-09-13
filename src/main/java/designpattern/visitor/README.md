@@ -125,5 +125,14 @@ Part <|. Switch
 
 ## Phase3：在HardDisk上增加Switch
 
-实现代码参考p3, 用于关闭开关的visitor无需修改
+实现代码参考p3, 用于关闭开关的visitor无需修改，这体现了Visitor模式的优点。主要的修改是在HardDisk上增加一个开关，并修改了visitor的实现。
 
+![alt text](image.png)
+
+```mermaid
+graph TD; //流程图，由上往下
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```

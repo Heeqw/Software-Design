@@ -45,11 +45,11 @@ public class Sort {
                 Employee.of("Jack", 35),
                 Employee.of("Danny", 25),
                 Employee.of("Carter", 45)));
-            // sort by age
-            Collections.sort(employees, (o1,o2) -> o1.getAge() - o2.getAge());
-            System.out.println(employees);
+        // sort by age
+        Collections.sort(employees, (o1, o2) -> o1.getAge() - o2.getAge());
 
 
+        System.out.println(employees);
 
         // sort by name
         System.out.println(employees);

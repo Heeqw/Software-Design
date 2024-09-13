@@ -34,10 +34,6 @@ public class Phase2 {
 
 }
 
-enum TaskType {
-    continueing, segmented
-}
-
 abstract class Task {
     private LocalDateTime start;
     private LocalDateTime end;

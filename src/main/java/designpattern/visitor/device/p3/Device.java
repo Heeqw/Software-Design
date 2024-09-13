@@ -3,8 +3,10 @@ package designpattern.visitor.device.p3;
 public class Device {
     public static void main(String[] args) {
         Computer computer = new Computer(
-                new Chassis(new Harddisk(
-                        new Switch("harddisk")), new Switch("chassis")),
+                new Chassis(
+                    new Harddisk(new Switch("harddisk")), 
+                    new Switch("chassis")
+                    ),
                 new Monitor(new Switch("monitor")));
 
         computer.getChassis().getSwitch1().close();
@@ -111,7 +113,7 @@ class Chassis implements DevicePart {
 
 }
 
-class Harddisk implements DevicePart {
+class Harddisk implements DevicePart{
 
     Switch sw;
 
