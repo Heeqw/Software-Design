@@ -1,0 +1,143 @@
+2024.09.18 10:29:45 INFO  Started: Metals version 1.3.5 in folders '/Users/zhangtiange/Courses/designpattern' for client Visual Studio Code 1.93.0.[0m
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@5099d051]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@3316fa66]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@5099d051]
+2024.09.18 10:29:45 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.[0m
+2024.09.18 10:29:45 INFO  no build target found for /Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/test.scala. Using presentation compiler with project's scala-library version: 3.3.3[0m
+2024.09.18 10:29:45 INFO  no build target found for /Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/test.scala. Using presentation compiler with project's scala-library version: 3.3.3[0m
+2024.09.18 10:29:46 WARN  Could not find semantic tokens for: file:///Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/test.scala[0m
+2024.09.18 10:29:47 INFO  no build target found for /Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/test.scala. Using presentation compiler with project's scala-library version: 3.3.3[0m
+2024.09.18 10:29:47 WARN  Could not find semantic tokens for: file:///Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/test.scala[0m
+2024.09.18 10:29:47 INFO  running '/Users/zhangtiange/.sdkman/candidates/java/current/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/Users/zhangtiange/Courses/designpattern -Dmaven.home=/var/folders/3l/z5c654tn7sl92mq7336f2tvh0000gn/T/metals8479977514704920280 -cp /var/folders/3l/z5c654tn7sl92mq7336f2tvh0000gn/T/metals8479977514704920280/maven-wrapper.jar org.apache.maven.wrapper.MavenWrapperMain generate-sources ch.epfl.scala:bloop-maven-plugin:2.0.0:bloopInstall -DdownloadSources=true'[0m
+2024.09.18 10:29:49 INFO  [INFO] Scanning for projects...[0m
+2024.09.18 10:29:49 INFO  [INFO] [0m
+2024.09.18 10:29:49 INFO  [INFO] ----------------------< ooad.designpattern:demo >-----------------------[0m
+2024.09.18 10:29:49 INFO  [INFO] Building demo 1.0-SNAPSHOT[0m
+2024.09.18 10:29:49 INFO  [INFO] --------------------------------[ jar ]---------------------------------[0m
+2024.09.18 10:29:49 INFO  [INFO] [0m
+2024.09.18 10:29:49 INFO  [INFO] --- bloop-maven-plugin:2.0.0:bloopInstall (default-cli) @ demo ---[0m
+2024.09.18 10:29:49 INFO  [INFO] Using empty launcher: no run setup for demo.[0m
+2024.09.18 10:29:49 INFO  [ERROR] org.scala-lang:scala([0-9]?)-library is missing from project dependencies[0m
+2024.09.18 10:29:49 INFO  [ERROR] org.scala-lang:scala([0-9]?)-library is missing from project dependencies[0m
+2024.09.18 10:29:49 INFO  [INFO] Resolving artifact: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = false)[0m
+2024.09.18 10:29:49 INFO  [INFO] SUCCESS: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = false)[0m
+2024.09.18 10:29:49 INFO  [INFO] Resolving artifact: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = true)[0m
+2024.09.18 10:29:49 INFO  [INFO] SUCCESS: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = true)[0m
+2024.09.18 10:29:49 INFO  [INFO] Generated .bloop/demo.json[0m
+2024.09.18 10:29:49 INFO  [INFO] Resolving artifact: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = false)[0m
+2024.09.18 10:29:49 INFO  [INFO] SUCCESS: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = false)[0m
+2024.09.18 10:29:49 INFO  [INFO] Resolving artifact: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = true)[0m
+2024.09.18 10:29:49 INFO  [INFO] SUCCESS: com.github.javaparser:javaparser-core:jar:3.25.10:compile (sources = true)[0m
+2024.09.18 10:29:49 INFO  [INFO] Generated .bloop/demo-test.json[0m
+2024.09.18 10:29:49 INFO  [INFO] ------------------------------------------------------------------------[0m
+2024.09.18 10:29:49 INFO  [INFO] BUILD SUCCESS[0m
+2024.09.18 10:29:49 INFO  [INFO] ------------------------------------------------------------------------[0m
+2024.09.18 10:29:49 INFO  [INFO] Total time:  0.474 s[0m
+2024.09.18 10:29:49 INFO  [INFO] Finished at: 2024-09-18T10:29:49+08:00[0m
+2024.09.18 10:29:49 INFO  [INFO] ------------------------------------------------------------------------[0m
+2024.09.18 10:29:49 INFO  time: ran 'mvn bloopInstall' in 1.39s[0m
+2024.09.18 10:29:49 INFO  Attempting to connect to the build server...[0m
+2024.09.18 10:29:49 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/zhangtiange/Courses/designpattern/.metals/bsp.trace.json or /Users/zhangtiange/Library/Caches/org.scalameta.metals/bsp.trace.json[0m
+2024.09.18 10:29:49 INFO  time: Connected to build server in 0.26s[0m
+2024.09.18 10:29:49 INFO  Connected to Build server: Bloop v1.6.0[0m
+2024.09.18 10:29:49 INFO  running doctor check[0m
+2024.09.18 10:29:49 INFO  java targets: demo-test, demo[0m
+2024.09.18 10:29:50 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.[0m
+2024.09.18 10:29:50 INFO  time: indexed workspace in 1.81s[0m
+2024.09.18 10:29:51 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:29:54 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:29:57 INFO  time: compiled demo in 2.91s[0m
+2024.09.18 10:29:57 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:29:57 INFO  time: compiled demo in 17ms[0m
+2024.09.18 10:29:57 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:29:57 INFO  time: compiled demo in 17ms[0m
+2024.09.18 10:30:03 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:30:03 INFO  time: compiled demo in 39ms[0m
+2024.09.18 10:30:10 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:30:10 INFO  time: compiled demo in 43ms[0m
+2024.09.18 10:30:11 INFO  compiling demo (1 scala source and 17 java sources)[0m
+2024.09.18 10:30:11 INFO  time: compiled demo in 47ms[0m
+2024.09.18 10:30:26 INFO  compiling demo (17 java sources)[0m
+2024.09.18 10:30:26 WARN  Unexpected javac output: 错误: 无效的目标发行版：17
+用法: javac <选项> <源文件>
+使用 --help 可列出可能的选项.[0m
+2024.09.18 10:30:26 WARN  javac exited with exit code 2[0m
+2024.09.18 10:30:26 INFO  time: compiled demo in 0.14s[0m
+2024.09.18 11:28:01 INFO  Shutting down server[0m
+2024.09.18 11:28:01 INFO  shutting down Metals[0m
+2024.09.18 11:28:01 INFO  Shut down connection with build server.[0m
+2024.09.18 11:28:01 INFO  Exiting server[0m
+2024.09.18 15:02:45 INFO  Started: Metals version 1.3.5 in folders '/Users/zhangtiange/Courses/designpattern' for client Visual Studio Code 1.93.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@462348fb]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@2c5d0407]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@462348fb]
+2024.09.18 15:02:45 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.09.18 15:02:46 INFO  Attempting to connect to the build server...
+2024.09.18 15:02:46 INFO  no build target found for /Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/CheckerBoard.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.09.18 15:02:46 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/zhangtiange/Courses/designpattern/.metals/bsp.trace.json or /Users/zhangtiange/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.09.18 15:02:46 INFO  time: Connected to build server in 0.47s
+2024.09.18 15:02:46 INFO  Connected to Build server: Bloop v1.6.0
+2024.09.18 15:02:46 WARN  no build target for: /Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/CheckerBoard.scala
+2024.09.18 15:02:46 INFO  no build target found for /Users/zhangtiange/Courses/designpattern/src/main/java/designpattern/iterator/CheckerBoard.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.09.18 15:02:47 INFO  running doctor check
+2024.09.18 15:02:47 INFO  java targets: demo-test, demo
+2024.09.18 15:02:48 WARN  Using indexes to guess the definition of Direction
+2024.09.18 15:02:48 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.09.18 15:02:48 INFO  time: indexed workspace in 1.56s
+2024.09.18 15:02:48 INFO  compiling demo (1 scala source and 23 java sources)
+2024.09.18 15:02:48 INFO  time: compiled demo in 40ms
+2024.09.18 15:02:48 INFO  compiling demo (1 scala source and 23 java sources)
+2024.09.18 15:02:48 INFO  time: compiled demo in 17ms
+2024.09.18 15:02:48 INFO  compiling demo (1 scala source and 23 java sources)
+2024.09.18 15:02:48 INFO  time: compiled demo in 16ms
+2024.09.18 15:02:48 WARN  Using indexes to guess the definition of Direction
+9月 18, 2024 3:02:50 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 29
+2024.09.18 15:06:12 INFO  compiling demo (1 scala source and 23 java sources)
+2024.09.18 15:06:12 INFO  time: compiled demo in 25ms
+2024.09.18 15:06:12 INFO  compiling demo (1 scala source and 23 java sources)
+2024.09.18 15:06:12 INFO  time: compiled demo in 13ms
+2024.09.18 15:12:52 INFO  compiling demo (2 scala sources and 23 java sources)
+2024.09.18 15:12:52 INFO  time: compiled demo in 42ms
+2024.09.18 15:14:22 INFO  compiling demo (2 scala sources and 24 java sources)
+2024.09.18 15:14:22 INFO  time: compiled demo in 43ms
+9月 18, 2024 3:14:35 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+严重: Internal error: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3481)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:244)
+	at java.base/java.util.ArrayList.add(ArrayList.java:454)
+	at java.base/java.util.ArrayList.add(ArrayList.java:467)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.pushToken$1(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.emitToken$1(ScalametaTokenizer.scala:146)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.loop$1(ScalametaTokenizer.scala:152)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:162)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:16)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$Lambda$1345/0x00000008005df8e0.apply(Unknown Source)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:960)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:16)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$1.apply(ScalametaTokenizer.scala:313)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:22)
+	at scala.meta.internal.metals.codeactions.StringActions.$anonfun$contribute$1(StringActions.scala:36)
+	at scala.meta.internal.metals.codeactions.StringActions$$Lambda$1278/0x00000008005c12b8.apply(Unknown Source)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.codeactions.StringActions.contribute(StringActions.scala:35)
+	at scala.meta.internal.metals.codeactions.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:79)
+	at scala.meta.internal.metals.codeactions.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:77)
+	at scala.collection.immutable.List.collect(List.scala:276)
+	at scala.meta.internal.metals.codeactions.CodeActionProvider.codeActions(CodeActionProvider.scala:77)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$codeAction$1(MetalsLspService.scala:1213)
+	at scala.meta.internal.metals.MetalsLspService$$Lambda$1238/0x00000008005ad6a8.apply(Unknown Source)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.codeAction(MetalsLspService.scala:1212)
+	at scala.meta.internal.metals.WorkspaceLspService.codeAction(WorkspaceLspService.scala:525)
+	at scala.meta.metals.lsp.DelegatingScalaService.codeAction(DelegatingScalaService.scala:146)
+	at jdk.internal.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+

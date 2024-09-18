@@ -2,7 +2,6 @@
 
 ## Visitor 模式结构
 
-
 ```plantuml
 @startuml
 interface Visitor #white{
@@ -129,10 +128,4 @@ Part <|. Switch
 
 ![alt text](image.png)
 
-```mermaid
-graph TD; //流程图，由上往下
-A-->B;
-A-->C;
-B-->D;
-C-->D;
-```
+
