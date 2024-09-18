@@ -88,7 +88,11 @@ class SegmentedTimeStrategy implements CalcWorkTimeStrategy{
 
     @Override
     public float calcWorkTime(Task task) {
-        return task.getActions().stream().map(Action::getDuration).reduce(0f, Float::sum);
+        return task
+                .getActions()
+                .stream()
+                .map(Action::getDuration)
+                .reduce(0f, Float::sum);
     }
 }
 

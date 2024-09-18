@@ -3,13 +3,16 @@ package designpattern.visitor.device.p2;
 public class Device {
     public static void main(String[] args) {
         Computer computer = new Computer(
-                new Chassis(new Harddisk(), new Switch("chassis")),
+                new Chassis(
+                    new Harddisk(), 
+                    new Switch("chassis")
+                ),
                 new Monitor(new Switch("monitor")));
 
         computer.getChassis().getSwitch1().close();
         computer.getMonitor().getSwitch1().close();
     
-        computer.accept(new DeviceVisitorAdapter(){
+        computer.accept(new DeviceVisitorAdapter() {
             @Override
             public void visit(Switch sw) {
                 sw.close();
@@ -31,7 +34,7 @@ interface DeviceVisitor {
     void visit(Switch aSwitch);
 }
 
-class DeviceVisitorAdapter implements DeviceVisitor{
+class DeviceVisitorAdapter implements DeviceVisitor {
 
     @Override
     public void visit(Computer computer) {
@@ -54,11 +57,11 @@ class DeviceVisitorAdapter implements DeviceVisitor{
     }
 }
 
-interface DevicePart{
+interface DevicePart {
     void accept(DeviceVisitor visitor);
 }
 
-class Computer implements DevicePart{
+class Computer implements DevicePart {
     private Chassis chassis;
     private Monitor monitor;
 
@@ -83,7 +86,7 @@ class Computer implements DevicePart{
     }
 }
 
-class Chassis implements DevicePart{
+class Chassis implements DevicePart {
 
     private Harddisk harddisk;
     private Switch switch1;
@@ -119,7 +122,7 @@ class Harddisk implements DevicePart{
 
 }
 
-class Monitor implements DevicePart{
+class Monitor implements DevicePart {
 
     private Switch switch1;
 
@@ -139,7 +142,7 @@ class Monitor implements DevicePart{
 
 }
 
-class Switch implements DevicePart{
+class Switch implements DevicePart {
     private String name;
 
     public Switch(String name) {
