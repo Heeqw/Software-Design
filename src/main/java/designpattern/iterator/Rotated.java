@@ -4,6 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Rotated {
+
+    /**
+     * Rotate the list by offset, return an Iterator
+     */
     public static <A> Iterator<A> rotated(List<A> list, int offset) {
         return new Iterator<A>() {
 

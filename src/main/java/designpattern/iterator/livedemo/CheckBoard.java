@@ -1,4 +1,4 @@
-package designpattern.iterator;
+package designpattern.iterator.livedemo;
 
 import java.util.Iterator;
 import java.util.List;
@@ -82,7 +82,7 @@ enum Direction {
 
 }
 
-public class CheckBoard implements Iterable<Cell> {
+public class CheckBoard {
 
     private ChessType[][] chessBoard;
     private int max_x;
@@ -113,37 +113,6 @@ public class CheckBoard implements Iterable<Cell> {
 
     public int getMax_y() {
         return max_y;
-    }
-
-    @Override
-    public Iterator<Cell> iterator() {
-        // 实现Iterator接口，用于遍历棋盘上的每个棋子
-        return new Iterator<Cell>() {
-
-            // 初始化棋盘坐标的x轴位置
-            private int x = 0;
-            // 初始化棋盘坐标的y轴位置
-            private int y = 0;
-
-            @Override
-            public boolean hasNext() {
-                // 判断棋盘上是否有下一个棋子
-                return x < getMax_x() && y < getMax_y();
-            }
-
-            @Override
-            public Cell next() {
-                // 获取当前坐标上的棋子，并移动到下一个位置
-                Cell cell = new Cell(x, y, getChess(x, y));
-                x++; // 在x轴上移动到下一个位置
-                if (x >= getMax_x()) {
-                    // 如果x轴达到最大值，则重置x轴并移动y轴到下一个位置
-                    x = 0;
-                    y++;
-                }
-                return cell;
-            }
-        };
     }
 
     /**
@@ -220,15 +189,15 @@ class Test {
             for (int x = 0; x < checkerBoard.getMax_x(); x++)
                 System.out.print(checkerBoard.getChess(x, y) + " ");
 
-        System.out.println("===>通过迭代器遍历：");
-        Iterator<Cell> cellIterator = checkerBoard.iterator();
-        while (cellIterator.hasNext())
-            System.out.println(cellIterator.next());
+        // System.out.println("===>通过迭代器遍历：");
+        // Iterator<Cell> cellIterator = checkerBoard.iterator();
+        // while (cellIterator.hasNext())
+        // System.out.println(cellIterator.next());
 
-        System.out.println("===>通过foreach遍历：");
-        for (Cell cell : checkerBoard) {
-            System.out.println(cell);
-        }
+        // System.out.println("===>通过foreach遍历：");
+        // for (Cell cell : checkerBoard) {
+        // System.out.println(cell);
+        // }
 
         System.out.println("===>通过迭代器遍历，从(2,2)开始，向下移动：");
         Iterator<Cell> i = checkerBoard.iterator(Direction.down, new Point(2, 2));
