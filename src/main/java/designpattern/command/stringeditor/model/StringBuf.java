@@ -20,11 +20,14 @@ public class StringBuf {
         return result;
     }
 
-    public String getStr() {
-        return str.toString();
-    }
 
+    // 在指定位置插入字符串, index为0或负数表示插入到开头, index为length或大于length表示插入到结尾
     public void insert(String str, int index) {
+        if (index < 0) {
+            index = 0;
+        } else if (index > this.str.length()) {
+            index = this.str.length();
+        }
         this.str.insert(index, str);
     }
 
@@ -36,8 +39,13 @@ public class StringBuf {
         return this.str.substring(start, end);
     }
 
-    @Override
-    public String toString() {
+    public String getString() {
         return str.toString();
     }
+
+    @Override
+    public String toString() {
+        return "StringBuf [str=" + str + "]";
+    }
+
 }

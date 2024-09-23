@@ -82,7 +82,7 @@ enum Direction {
 
 }
 
-public class CheckBoard {
+public class CheckBoard implements Iterable<Cell> {
 
     private ChessType[][] chessBoard;
     private int max_x;
@@ -113,6 +113,52 @@ public class CheckBoard {
 
     public int getMax_y() {
         return max_y;
+    }
+
+    @Override
+    public Iterator<Cell> iterator() {
+        // 实现Iterator接口，用于遍历棋盘上的每个棋子
+        return new Iterator<Cell>() {
+
+            // 初始化棋盘坐标的x轴位置
+            private int x = 0;
+
+            private int y = 0;
+
+            /**
+             * 返回迭代的下一个元素，并移动到下一个元素的位置
+             * 
+             * @return 返回下一个Cell
+             */
+            @Override
+            public Cell next() {
+                // 根据当前位置x和y创建一个细胞对象
+                Cell cell = new Cell(x, y, getChess(x, y));
+                // 更新当前位置x和y，使其指向下一个位置
+                x++;
+
+                if (x >= getMax_x()) {
+                    // 如果x轴达到最大值，则重置x轴并移动y轴到下一个位置
+                    x = 0;
+                    y++;
+                }
+
+                return cell;
+
+            }
+
+            /**
+             * 检查迭代是否还有下一个元素
+             * 
+             * @return 如果有下一个元素，返回true；否则返回false
+             */
+            @Override
+            public boolean hasNext() {
+
+                return x < getMax_x() && y < getMax_y();
+
+            }
+        };
     }
 
     /**

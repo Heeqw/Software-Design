@@ -20,21 +20,21 @@ public class StringBufTest {
     public void delete_ValidRange_ShouldDeleteCharacters() {
         String deleted = stringBuf.delete(0, 5);
         assertEquals("Hello", deleted);
-        assertEquals(" World", stringBuf.toString());
+        assertEquals(" World", stringBuf.getString());
     }
 
     @Test
     public void delete_StartEqualsEnd_ShouldNotDeleteCharacters() {
         String deleted = stringBuf.delete(5, 5);
         assertEquals("", deleted);
-        assertEquals("Hello World", stringBuf.toString());
+        assertEquals("Hello World", stringBuf.getString());
     }
 
     @Test
     public void delete_EndOutOfBounds_ShouldDeleteToEndOfString() {
         String deleted = stringBuf.delete(0, 13);
         assertEquals("Hello World", deleted);
-        assertEquals("", stringBuf.toString());
+        assertEquals("", stringBuf.getString());
     }
 
     @Test
@@ -51,6 +51,6 @@ public class StringBufTest {
         StringBuf emptyStringBuf = new StringBuf("");
         String deleted = emptyStringBuf.delete(0, 0);
         assertEquals("", deleted);
-        assertEquals("", emptyStringBuf.toString());
+        assertEquals("", emptyStringBuf.getString());
     }
 }

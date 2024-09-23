@@ -1,0 +1,32 @@
+package designpattern.command.livedemo.command;
+
+import java.util.Stack;
+
+public class CommandInvoker {
+
+    Stack<Command> undoStack = new Stack<Command>();
+    Stack<Command> redoStack = new Stack<Command>();
+
+    public void execute(Command command) {
+        command.execute();
+        undoStack.push(command);
+        redoStack.clear();
+    }
+
+    public void undo() {
+        if (!undoStack.isEmpty()) {
+            Command command = undoStack.pop();
+            command.undo();
+            redoStack.push(command);
+        }
+    }
+
+    public void redo() {
+        if (!redoStack.isEmpty()) {
+            Command command = redoStack.pop();
+            command.execute();
+            undoStack.push(command);
+        }
+    }
+
+}

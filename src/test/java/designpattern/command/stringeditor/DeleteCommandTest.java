@@ -13,11 +13,11 @@ public class DeleteCommandTest {
     public void deleteCommandTest() {
 
         StringBuf stringBuf = new StringBuf("hello world");
-        DeleteCommand deleteCommand = new DeleteCommand(stringBuf, 0, 5);
-        deleteCommand.execute();
-        assertEquals(" world", stringBuf.getStr());
-        deleteCommand.undo();
-        assertEquals("hello world", stringBuf.getStr());
+        DeleteCommand deleteCommand = new DeleteCommand(0, 5);
+        deleteCommand.execute(stringBuf);
+        assertEquals(" world", stringBuf.getString());
+        deleteCommand.undo(stringBuf);
+        assertEquals("hello world", stringBuf.getString());
     }
 
 }
