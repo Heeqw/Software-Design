@@ -4,24 +4,26 @@ import designpattern.command.stringeditor.model.StringBuf;
 
 public class DeleteCommand implements CanUndoCommand {
 
+    private StringBuf stringBuf;
     private int start;
     private int end;
     private String deletedText;
 
-    public DeleteCommand(int start, int end) {
+    public DeleteCommand(StringBuf stringBuf, int start, int end) {
         this.start = start;
         this.end = end;
+        this.stringBuf = stringBuf;
     }
 
-    public static Command create(StringBuf stringBuf2, int start, int end) {
-        return new DeleteCommand(start, end);
+    public static Command create(StringBuf stringBuf, int start, int end) {
+        return new DeleteCommand(stringBuf, start, end);
     }
 
-    public void execute(StringBuf stringBuf) {
+    public void execute() {
         deletedText = stringBuf.delete(start, end);
     }
 
-    public void undo(StringBuf stringBuf) {
+    public void undo() {
         stringBuf.insert(deletedText, start);
     }
 

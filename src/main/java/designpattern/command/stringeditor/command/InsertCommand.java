@@ -3,26 +3,28 @@ package designpattern.command.stringeditor.command;
 import designpattern.command.stringeditor.model.StringBuf;
 
 public class InsertCommand implements CanUndoCommand {
+    private StringBuf stringBuf;
     private String str;
     private int index;
 
-    public InsertCommand(String str, int index) {
+    public InsertCommand(StringBuf stringBuf, String str, int index) {
         this.str = str;
         this.index = index;
+        this.stringBuf = stringBuf;
     }
 
-    public static Command create(String str, int index) {
-        return new InsertCommand(str, index);
-    }
-
-    @Override
-    public void execute(StringBuf buf) {
-        buf.insert(str, index);
+    public static Command create(StringBuf stringBuf, String str, int index) {
+        return new InsertCommand(stringBuf, str, index);
     }
 
     @Override
-    public void undo(StringBuf buf) {
-        buf.delete(index, index + str.length());
+    public void execute() {
+        stringBuf.insert(str, index);
+    }
+
+    @Override
+    public void undo() {
+        stringBuf.delete(index, index + str.length());
     }
 
     @Override

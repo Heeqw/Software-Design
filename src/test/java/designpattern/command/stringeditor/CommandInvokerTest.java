@@ -13,10 +13,10 @@ public class CommandInvokerTest {
     @Test
     public void testCommandInvoker_append() {
         StringBuf stringBuf = new StringBuf("Hello");
-        CommandInvoker commandInvoker = new CommandInvoker(stringBuf);
+        CommandInvoker commandInvoker = new CommandInvoker();
 
-        commandInvoker.storeAndExecute(new AppendCommand(" World"));
-        commandInvoker.storeAndExecute(new AppendCommand(" Again"));
+        commandInvoker.storeAndExecute(new AppendCommand(stringBuf, " World"));
+        commandInvoker.storeAndExecute(new AppendCommand(stringBuf, " Again"));
         commandInvoker.undoLastCommand();
         assertEquals("Hello World", stringBuf.getString());
         commandInvoker.undoLastCommand();

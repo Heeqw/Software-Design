@@ -6,22 +6,25 @@ public class AppendCommand implements CanUndoCommand {
     private final String text;
     private int previousLength;
 
-    public AppendCommand(String text) {
+    private StringBuf stringBuf;
+
+    public AppendCommand(StringBuf stringBuf, String text) {
         this.text = text;
+        this.stringBuf = stringBuf;
     }
 
-    public static AppendCommand create(String text) {
-        return new AppendCommand(text);
+    public static AppendCommand create(StringBuf stringBuf, String text) {
+        return new AppendCommand(stringBuf, text);
     }
 
     @Override
-    public void execute(StringBuf stringBuf) {
+    public void execute() {
         previousLength = stringBuf.length();
         stringBuf.append(text);
     }
 
     @Override
-    public void undo(StringBuf stringBuf) {
+    public void undo() {
         stringBuf.delete(previousLength, stringBuf.length());
     }
 

@@ -5,8 +5,12 @@ import java.util.regex.Pattern;
 
 import designpattern.command.stringeditor.command.AppendCommand;
 import designpattern.command.stringeditor.command.Command;
+import designpattern.command.stringeditor.command.CommandInvoker;
 import designpattern.command.stringeditor.command.DeleteCommand;
 import designpattern.command.stringeditor.command.InsertCommand;
+import designpattern.command.stringeditor.command.RedoCommand;
+import designpattern.command.stringeditor.command.UndoCommand;
+import designpattern.command.stringeditor.model.StringBuf;
 
 /**
  * 将命令行参数封装成命令:
@@ -14,6 +18,8 @@ import designpattern.command.stringeditor.command.InsertCommand;
  * 追加命令： a 'string'
  * 插入命令： i pos 'string'
  * 删除命令： d pos len
+ * 取消: undo
+ * 重做: redo
  * 显示当前编辑缓存的内容: l
  * 显示所有支持的命令: h //TODO
  * 
@@ -32,7 +38,8 @@ public class CommandParser {
                 .replace("\\'", "'");
     }
 
-    public static Command parse(String commandline) throws InvalidCommandException {
+    public static Command parse(StringBuf stringBuf, CommandInvoker commandInvoker, String commandline)
+            throws InvalidCommandException {
 
         String appendRegex = "^a\\s+'((?:[^'\\\\]|\\\\.)*?)'$";
         String insertRegex = "^i\\s+(\\d+)\\s+('((?:[^'\\\\]|\\\\.)*?)')$";
@@ -42,7 +49,7 @@ public class CommandParser {
             Matcher m = Pattern.compile(appendRegex).matcher(commandline);
             if (m.matches()) {
                 String value = m.group(1);
-                return new AppendCommand(extractStringContent(value));
+                return new AppendCommand(stringBuf, extractStringContent(value));
             } else
                 throw new InvalidCommandException("Invalid append command: " + commandline);
         } else if (commandline.matches(insertRegex)) {
@@ -50,7 +57,7 @@ public class CommandParser {
             if (m1.matches()) {
                 String pos = m1.group(1);
                 String value = m1.group(2);
-                return new InsertCommand(extractStringContent(value), Integer.parseInt(pos));
+                return new InsertCommand(stringBuf, extractStringContent(value), Integer.parseInt(pos));
             } else
                 throw new InvalidCommandException("Invalid insert command: " + commandline);
         } else if (commandline.matches(deleteRegex)) {
@@ -58,11 +65,15 @@ public class CommandParser {
             if (m2.matches()) {
                 int start = Integer.parseInt(m2.group(1));
                 int end = start + Integer.parseInt(m2.group(2));
-                return new DeleteCommand(start, end);
+                return new DeleteCommand(stringBuf, start, end);
             } else
                 throw new InvalidCommandException("Invalid delete command: " + commandline);
         } else if (commandline.equals("l")) {
-            return new ShowStringCommand();
+            return new ShowStringCommand(stringBuf);
+        } else if (commandline.equals("undo")) {
+            return new UndoCommand(commandInvoker);
+        } else if (commandline.equals("redo")) {
+            return new RedoCommand(commandInvoker);
         }
         throw new InvalidCommandException("Invalid command: " + commandline);
     }

@@ -10,7 +10,7 @@ public class Console {
 
     public static void main(String[] args) {
         StringBuf stringBuf = new StringBuf("");
-        CommandInvoker commandInvoker = new CommandInvoker(stringBuf);
+        CommandInvoker commandInvoker = new CommandInvoker();
         while (true) {
             System.out.print("Enter command: ");
             String commandStr = System.console().readLine();
@@ -18,7 +18,7 @@ public class Console {
                 break;
             }
             try {
-                Command command = CommandParser.parse(commandStr);
+                Command command = CommandParser.parse(stringBuf, commandInvoker, commandStr);
                 commandInvoker.storeAndExecute(command);
             } catch (InvalidCommandException e) {
                 System.out.println(e.getMessage());
