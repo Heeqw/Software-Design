@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class CommandInvoker {
 
-    Stack<Command> undoStack = new Stack<Command>();
-    Stack<Command> redoStack = new Stack<Command>();
+    private Stack<Command> undoStack = new Stack<>();
+    private Stack<Command> redoStack = new Stack<>();
 
     public void execute(Command command) {
         command.execute();
@@ -28,5 +28,4 @@ public class CommandInvoker {
             undoStack.push(command);
         }
     }
-
 }

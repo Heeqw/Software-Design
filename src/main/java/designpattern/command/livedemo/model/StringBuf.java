@@ -1,38 +1,57 @@
 package designpattern.command.livedemo.model;
 
-
-/**
- * 字符串编辑器，支持字符串的追加、插入、删除等操作。
- */
+//实现字符串缓冲区，包括对字符串的追加、删除、插入等操作
 public class StringBuf {
 
     private StringBuilder sb;
 
-    public StringBuf(String str) {
-        sb = new StringBuilder(str);
+    public StringBuf(String buf) {
+        sb = new StringBuilder(buf);
+    }
+
+    public StringBuf() {
+        sb = new StringBuilder();
+    }
+
+    public String getString() {
+        return sb.toString();
     }
 
     public void append(String str) {
         sb.append(str);
     }
 
-    public void insert(int index, String str) {
-        sb.insert(index, str);
-    }
-
-    // 删除指定范围的字符串，返回被删除的字符串, 如果end大于长度，则删除到末尾
-    public String delete(int start, int end) {
-
+    /*
+     * 删除指定位置的字符串, 如果end 大于字符串的长度，则删除到字符串末尾
+     * 如果start 大于字符串的长度，则什么也不做。
+     */
+    public void delete(int start, int end) {
+        if (start > sb.length()) {
+            return;
+        }
         if (end > sb.length()) {
             end = sb.length();
         }
-        String deleted = sb.substring(start, end);
         sb.delete(start, end);
-        return deleted;
     }
 
-    public String getStr() {
-        return sb.toString();
+    /**
+     * 插入字符串到指定位置。如果index大于字符串的长度，则插入到字符串末尾，
+     * 如果index小于0，则什么也不做
+     */
+    public void insert(int index, String str) {
+        if (index > sb.length()) {
+            index = sb.length();
+        }
+        if (index < 0) {
+            return;
+        }
+        sb.insert(index, str);
+    }
+
+    // 获取子串
+    public String substring(int start, int end) {
+        return sb.substring(start, end);
     }
 
 }

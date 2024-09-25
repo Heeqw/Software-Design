@@ -7,22 +7,25 @@ public class DeleteCommand implements Command {
     private StringBuf stringBuf;
     private int start;
     private int end;
-    private String deletedStr;
 
-    public DeleteCommand(StringBuf stringBuf2, int start, int end) {
-        this.stringBuf = stringBuf2;
+    private String deletedString;
+
+    public DeleteCommand(StringBuf stringBuf, int start, int end) {
+        this.stringBuf = stringBuf;
         this.start = start;
         this.end = end;
     }
 
     @Override
     public void execute() {
-        deletedStr = stringBuf.delete(start, end);
+
+        deletedString = stringBuf.substring(start, end);
+        stringBuf.delete(start, end);
     }
 
     @Override
     public void undo() {
-        stringBuf.insert(start, deletedStr);
+        stringBuf.insert(start, deletedString);
     }
 
 }

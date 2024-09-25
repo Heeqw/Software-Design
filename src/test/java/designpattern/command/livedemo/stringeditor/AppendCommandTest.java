@@ -9,15 +9,14 @@ import designpattern.command.livedemo.model.StringBuf;
 
 public class AppendCommandTest {
 
+
     @Test
-    public void test() {
-        StringBuf stringBuf = new StringBuf("");
-        AppendCommand appendCommand = new AppendCommand(stringBuf, "hello world");
+    public void testExecute() {
+        StringBuf stringBuf = new StringBuf();
+        AppendCommand appendCommand = new AppendCommand(stringBuf, "hello");
         appendCommand.execute();
-        assertEquals("hello world", stringBuf.getStr());
-
+        assertEquals("hello", stringBuf.getString());
         appendCommand.undo();
-        assertEquals("", stringBuf.getStr());
+        assertEquals("", stringBuf.getString());
     }
-
 }

@@ -4,7 +4,9 @@ import designpattern.command.livedemo.model.StringBuf;
 
 public class AppendCommand implements Command {
 
+
     private StringBuf stringBuf;
+
     private String str;
 
     public AppendCommand(StringBuf stringBuf, String str) {
@@ -19,9 +21,7 @@ public class AppendCommand implements Command {
 
     @Override
     public void undo() {
-        stringBuf.delete(
-                stringBuf.getStr().length() - str.length(),
-                stringBuf.getStr().length());
+        stringBuf.delete(stringBuf.getString().length() - str.length(), stringBuf.getString().length());
     }
 
 }
