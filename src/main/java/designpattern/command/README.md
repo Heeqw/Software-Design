@@ -32,6 +32,9 @@ note right of ConcreteCommand: receiver.action()
 * 追加： a 'string'
 * 插入： i pos 'string'
 * 删除： d pos len
+* 显示当前内容：l
+* undo: undo
+* redo: redo
 * 显示当前编辑缓存的内容: l
 
 ## 主要类及其关系如下：
@@ -50,24 +53,24 @@ package model{
 package command{
 
     interface Command <<Command>> {
-        +execute(StringBuf)
+        +execute()
     }
 
     interface CanUndoCommand extends Command{
-        +undo(StringBuf)
+        +undo()
     }
 
     class AppendCommand<<ConcreteCommand>> implements CanUndoCommand {
-        +execute(StringBuf)
-        +undo(StringBuf)
+        +execute()
+        +undo()
     }
     class InsertCommand<<ConcreteCommand>> implements CanUndoCommand {
-        +execute(StringBuf)
-        +undo(StringBuf)
+        +execute()
+        +undo()
     }
     class DeleteCommand<<ConcreteCommand>> implements CanUndoCommand {
-        +execute(StringBuf)
-        +undo(StringBuf)
+        +execute()
+        +undo()
     }
 
     class CommandInvoker<<Invoker>> {
@@ -88,8 +91,8 @@ package console{
     }
 
     class ShowStringCommand<<ConcreteCommand>> {
-        +execute(StringBuf)
-        +undo(StringBuf)
+        +execute()
+        +undo()
     }
 
     class Console

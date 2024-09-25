@@ -1,6 +1,5 @@
 package designpattern.command.stringeditor.console;
 
-import com.jnape.palatable.lambda.adt.Either;
 
 import designpattern.command.stringeditor.command.Command;
 import designpattern.command.stringeditor.command.CommandInvoker;
