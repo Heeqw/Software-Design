@@ -3,10 +3,7 @@ package designpattern.command.livedemo.command;
 import designpattern.command.livedemo.model.StringBuf;
 
 public class AppendCommand implements Command {
-
-
     private StringBuf stringBuf;
-
     private String str;
 
     public AppendCommand(StringBuf stringBuf, String str) {

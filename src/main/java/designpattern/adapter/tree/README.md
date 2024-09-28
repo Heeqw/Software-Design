@@ -122,6 +122,9 @@ List<Employee> employees = Arrays.asList(
     └── Jim
 ```
 
+## vscode中写一个tree的plugin
+https://code.visualstudio.com/api/extension-guides/tree-view
+
 ## 思考
 
 如何测试TreeView.show和showTreeWithLines的正确性？

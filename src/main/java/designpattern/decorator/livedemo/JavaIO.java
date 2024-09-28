@@ -1,4 +1,4 @@
-package designpattern.decorator;
+package designpattern.decorator.livedemo;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -10,10 +10,9 @@ import java.util.zip.GZIPInputStream;
 
 public class JavaIO {
     public static void main(String[] args) throws IOException {
-        InputStream fs = new GZIPInputStream(
-                new BufferedInputStream(
-                        new FileInputStream(
-                                new File("/Users/zhangtiange/Downloads/application.log"))));
+        InputStream fs = new GZIPInputStream(new BufferedInputStream(
+                new FileInputStream(
+                        new File("/Users/zhangtiange/Downloads/application.log.gz"))));
 
         try (InputStreamReader reader = new InputStreamReader(fs, "UTF-8")) {
             while (reader.ready())

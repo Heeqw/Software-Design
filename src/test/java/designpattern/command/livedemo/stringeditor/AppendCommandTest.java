@@ -11,12 +11,13 @@ public class AppendCommandTest {
 
 
     @Test
-    public void testExecute() {
-        StringBuf stringBuf = new StringBuf();
-        AppendCommand appendCommand = new AppendCommand(stringBuf, "hello");
+    public void testAppendCommand() {
+        StringBuf stringBuf = new StringBuf("hello");
+        AppendCommand appendCommand = new AppendCommand(stringBuf, " world");
         appendCommand.execute();
-        assertEquals("hello", stringBuf.getString());
+        assertEquals("hello world", stringBuf.getString());
         appendCommand.undo();
-        assertEquals("", stringBuf.getString());
+        assertEquals("hello", stringBuf.getString());
     }
+
 }

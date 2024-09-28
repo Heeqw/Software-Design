@@ -4,12 +4,36 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class VisualTreeVIewer<T> {
+interface Visitor<T> {
+    void visit(Node<T> node);
+}
+
+class Node<T> {
+    T data;
+    List<Boolean> hasNextSlibling;
+
+    public Node(T data, List<Boolean> hasNextSlibling) {
+        this.data = data;
+        this.hasNextSlibling = hasNextSlibling;
+    }
+
+    @Override
+    public String toString() {
+
+        return "Node{" +
+                "data=" + data +
+                ", hasNextSlibling=" + hasNextSlibling +
+                '}';
+
+    }
+}
+
+public class VisualTreeViewer<T> {
 
     private TreeContentProvider<T> contentProvider;
     private NameProvider<T> nameProvider;
 
-    public VisualTreeVIewer(TreeContentProvider<T> contentProvider, NameProvider<T> nameProvider) {
+    public VisualTreeViewer(TreeContentProvider<T> contentProvider, NameProvider<T> nameProvider) {
         this.contentProvider = contentProvider;
         this.nameProvider = nameProvider;
     }

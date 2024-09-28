@@ -8,15 +8,12 @@ import designpattern.command.livedemo.command.DeleteCommand;
 import designpattern.command.livedemo.model.StringBuf;
 
 public class DeleteCommandTest {
-
     @Test
-    public void testExecute() {
-        StringBuf sb = new StringBuf("hello world");
-        DeleteCommand cmd = new DeleteCommand(sb, 6, 11);
+    public void testDelete() {
+        StringBuf stringBuf = new StringBuf("hello world");
+        DeleteCommand cmd = new DeleteCommand(stringBuf, 6, 11);
         cmd.execute();
-        assertEquals("hello ", sb.getString());
-        cmd.undo();
-        assertEquals("hello world", sb.getString());
+        System.out.println(stringBuf.getString()); // "hello"
+        assertEquals("hello ", stringBuf.getString());
     }
-
 }

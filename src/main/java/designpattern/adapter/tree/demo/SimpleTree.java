@@ -5,8 +5,17 @@ import java.util.List;
 
 import designpattern.adapter.tree.SimpleTreeViewer;
 import designpattern.adapter.tree.TreeContentProvider;
-import designpattern.adapter.tree.VisualTreeVIewer;
+import designpattern.adapter.tree.VisualTreeViewer;
 
+/**
+ * ├── 1
+ * ├── 2
+ * │ ├── 4
+ * │ ├── 5
+ * │ │ └── 7
+ * │ └── 6
+ * └── 3
+ */
 public class SimpleTree {
 
     public static void main(String[] args) {
@@ -32,7 +41,7 @@ public class SimpleTree {
         new SimpleTreeViewer<Integer>(
                 contentProvider,
                 (node) -> String.valueOf(node)).show();
-        new VisualTreeVIewer<Integer>(
+        new VisualTreeViewer<Integer>(
                 contentProvider,
                 (node) -> String.valueOf(node)).show();
 

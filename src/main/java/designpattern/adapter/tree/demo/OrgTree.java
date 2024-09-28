@@ -6,7 +6,17 @@ import java.util.stream.Collectors;
 
 import designpattern.adapter.tree.SimpleTreeViewer;
 import designpattern.adapter.tree.TreeContentProvider;
-import designpattern.adapter.tree.VisualTreeVIewer;
+import designpattern.adapter.tree.VisualTreeViewer;
+
+/**
+ * <pre>
+  └── John
+    ├── Mary
+    │   ├── Joe
+    │   └── Jane
+    └── Jim
+ * </pre>
+ */
 
 class Employee {
     private String name;
@@ -62,7 +72,7 @@ public class OrgTree {
         new SimpleTreeViewer<Employee>(
                 contentProvider,
                 (node) -> node.getName()).show();
-        new VisualTreeVIewer<Employee>(
+        new VisualTreeViewer<Employee>(
                 contentProvider,
                 (node) -> node.getName()).show();
 

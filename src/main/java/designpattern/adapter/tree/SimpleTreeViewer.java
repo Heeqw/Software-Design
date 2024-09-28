@@ -2,6 +2,10 @@ package designpattern.adapter.tree;
 
 import java.util.List;
 
+/**
+ * SimpleTreeViewer is a simple implementation of a tree viewer. It uses a
+ * TreeContentProvider and a NameProvider to display a tree structure.
+ */
 public class SimpleTreeViewer<T> {
 
     private TreeContentProvider<T> contentProvider;
