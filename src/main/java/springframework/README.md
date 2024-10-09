@@ -105,6 +105,8 @@ public class PaymentService {
 
 ```
 
+---
+
 # Dependency injection with Spring Sample
 
 Dependency injection:

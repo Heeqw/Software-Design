@@ -2,7 +2,7 @@ package tdd.dicegame.p2;
 
 public class DiceGame {
     public boolean isWin(int r1, int r2) {
-        return (r1 + r2) > 0;
+        return (r1 + r2) > 6;
     }
 
     public boolean play() {
