@@ -7,12 +7,10 @@ import org.junit.Test;
 import tdd.calc.Calc;
 
 public class CalcTest {
-
     @Test
     public void testAdd() {
         Calc calc = new Calc();
-        int result = calc.add(2, 3);
-        assertEquals(5, result);
+        int result = calc.add(1, 2);
+        assertEquals(3, result);
     }
-
 }

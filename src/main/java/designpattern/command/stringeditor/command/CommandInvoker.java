@@ -2,7 +2,6 @@ package designpattern.command.stringeditor.command;
 
 import java.util.Stack;
 
-import designpattern.command.stringeditor.model.StringBuf;
 
 /**
  * CommandInvoker is responsible for executing and undoing commands.
