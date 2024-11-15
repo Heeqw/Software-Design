@@ -39,6 +39,11 @@ class Movie #white{
     title
     priceCode
 }
+enum PriceCode #white{
+    CHILDREN
+    REGULAR
+    NEW_RELEASE
+}
 Customer -> "*" Rental
 Rental "*" -> "1" Movie
 @enduml
